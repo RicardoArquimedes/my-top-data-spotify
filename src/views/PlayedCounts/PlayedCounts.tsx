@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getRecentlyPlayedCounts } from '../../utils/spotifyApi/spotifyApi';
 import { SongCountItem } from '../../types/types';
 
