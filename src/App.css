@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+.noto-sans-semi-bold {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
