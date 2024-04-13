@@ -41,10 +41,10 @@ export async function getRecentlyPlayed() {
  
 
   const now = new Date();
-  const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  // const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, -1);
 
-  const startTime = startOfDay.getTime();
+  // const startTime = startOfDay.getTime();
   const endTime = endOfDay.getTime();
 
   try {
