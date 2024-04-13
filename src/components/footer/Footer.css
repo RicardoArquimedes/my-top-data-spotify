@@ -1,0 +1,16 @@
+/* src/components/footer/Footer.css */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed; /* Posicionar el footer */
+    bottom: 0; /* Fijar al fondo */
+    left: 0;
+    width: 100%; /* Ocupar todo el ancho */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
