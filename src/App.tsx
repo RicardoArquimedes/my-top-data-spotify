@@ -1,39 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import Card from './components/card/Card';
-import { getTopSongs } from './utils/spotifyApi/spotifyApi';
+import Home from './views/Home/Home';
+import TopSongs from './views/top-songs/Top-songs';
+import TodayPlayed from './views/TodayPlayed/TodayPlayed';
+import PlayedCounts from './views/PlayedCounts/PlayedCounts';
 
-const Home: React.FC = () => {
-  const [songs, setSongs] = useState<any[]>([]);
-
-  useEffect(() => {
-    async function fetchTopSongs() {
-      const tracks = await getTopSongs();
-      setSongs(tracks);
-    }
-    fetchTopSongs();
-  }, []);
-
+const App: React.FC = () => {
   return (
-    <div>
+    <BrowserRouter>
       <Navbar />
-      <h2>Top 10 Songs</h2>
-      <div className="card-container">
-        {songs.map((song, index) => (
-          <Card 
-            key={index}
-            image={song.album.images[0].url}
-            name={song.name}
-            artist={song.artists.map((artist: any) => artist.name).join(', ')}
-            spotifyUrl={song.external_urls.spotify}
-            extraInfo={`Popularity: ${song.popularity}`}
-          />
-        ))}
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/today-played" element={<TodayPlayed />} />
+        <Route path="/top-songs" element={<TopSongs />} />
+        <Route path="/played" element={<PlayedCounts />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 };
 
-export default Home;
+export default App;
