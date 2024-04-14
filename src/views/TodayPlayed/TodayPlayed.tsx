@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getRecentlyPlayed } from '../../utils/spotifyApi/spotifyApi';
-
+import { useSpotifyApi } from '../../utils/spotifyApi/spotifyApi';
 // Definir tipo para los items de canción
 interface TrackItem {
     track: {
@@ -15,17 +14,18 @@ interface TrackItem {
 
 const TodayPlayed: React.FC = () => {
     const [tracks, setTracks] = useState<TrackItem[]>([]);
+    const { getRecentlyPlayed } = useSpotifyApi();  // Usar el hook para acceder a getRecentlyPlayed
 
     useEffect(() => {
         const fetchTracks = async () => {
-            const items = await getRecentlyPlayed();
-            if (items) {
-                setTracks(items);
+            const response = await getRecentlyPlayed();  // Llama a la función desde el hook
+            if (response) {
+                setTracks(response);  // Asegúrate de que la respuesta sea directamente el array de tracks, si no, ajusta según el formato de respuesta
             }
         };
 
         fetchTracks();
-    }, []);
+    }, [getRecentlyPlayed]);  // Incluye getRecentlyPlayed en las dependencias de useEffect
 
     return (
         <div>

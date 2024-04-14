@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
-import { getRecentlyPlayedCounts } from '../../utils/spotifyApi/spotifyApi';
+import { useSpotifyApi } from '../../utils/spotifyApi/spotifyApi'; // Asegúrate de que la ruta es correcta
 import { SongCountItem } from '../../types/types';
 
 const PlayedCountsComponent = () => {
   const [tracks, setTracks] = useState<SongCountItem[]>([]);
+  const { getRecentlyPlayedCounts } = useSpotifyApi();  // Usar el hook para acceder a getRecentlyPlayedCounts
 
   useEffect(() => {
     const fetchTrackCounts = async () => {
-      const trackCounts = await getRecentlyPlayedCounts();
+      const trackCounts = await getRecentlyPlayedCounts();  // Llama a la función desde el hook
       setTracks(trackCounts);
     };
 
     fetchTrackCounts();
-  }, []);
+  }, [getRecentlyPlayedCounts]);  // Incluye getRecentlyPlayedCounts en las dependencias de useEffect
 
   return (
     <div>

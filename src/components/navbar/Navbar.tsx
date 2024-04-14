@@ -1,4 +1,5 @@
 // src/components/navbar/Navbar.tsx
+import { Link } from "react-router-dom";
 import "./Navbar.css"
 import React from 'react';
 
@@ -6,12 +7,10 @@ const Navbar: React.FC = () => {
   return (
     <nav>
       <ul className="noto-sans-semi-bold">
-        <li><a href="#home">My Top Data Spotify</a></li>
-        <li><a href="#songs">Songs</a></li>
-        <li><a href="#artists">Artists</a></li>
-        <li><a href="#albums">Albums</a></li>
-        <li><a href="#top-songs">Top Songs</a></li>
-        <li><a href="#top-albums">Top Albums</a></li>
+      <li><Link to="/home">My Top Data Spotify</Link></li>
+        <li><Link to="/top-songs">Top Songs</Link></li>
+        <li><Link to="/played">Top Today</Link></li>
+        <li><Link to="/today-played">Played Today</Link></li>
       </ul>
     </nav>
   );
