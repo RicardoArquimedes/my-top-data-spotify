@@ -1,6 +1,6 @@
 import { useContext, useCallback } from 'react';
 import { AuthContext } from '../../contexts/AuthContexts'; // Verifica que la ruta sea correcta
-import { PlayHistoryItem, SongCount } from '../../types/types';
+import { PlayHistoryItem, SongCount, SongCountItem, TopSongsResponse } from '../../types/types';
 
 export const useSpotifyApi = () => {
     const { token } = useContext(AuthContext);
@@ -29,14 +29,15 @@ export const useSpotifyApi = () => {
         }
     }, [token]); // La dependencia aquí es 'token', que es el único valor externo que afecta el resultado de esta función
 
-    const getTopSongs = useCallback(async () => {
-        return await fetchWebApi('v1/me/top/tracks?time_range=short_term&limit=10');
-    }, [fetchWebApi]); // 'fetchWebApi' se incluye como dependencia ya que esta función es utilizada aquí
-
+    const getTopSongs = useCallback(async (): Promise<TopSongsResponse> => {
+        // Implementación de la llamada API, asumiendo que fetchWebApi ya está correctamente definido
+        return fetchWebApi('v1/me/top/tracks?time_range=short_term&limit=50');
+    }, [fetchWebApi]);
 
   const getRecentlyPlayed = useCallback(async () => {
     const now = new Date();
-    const midnightToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0); // medianoche de hoy
+    // const midnightToday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 4, 0, 0, 0);
+    const midnightToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
     const startTime = midnightToday.getTime(); // Convertir medianoche a tiempo Unix en milisegundos
 
     const response = await fetchWebApi(`v1/me/player/recently-played?limit=50&after=${startTime}`);
@@ -63,5 +64,29 @@ export const useSpotifyApi = () => {
       return Object.values(songCounts);  // Devuelve un arreglo de objetos de conteo de canciones
   }, [getRecentlyPlayed]);
 
-    return { getTopSongs, getRecentlyPlayed, getRecentlyPlayedCounts };
+  const getMidnightsPlayCounts = useCallback(async () => {
+    const allRecentlyPlayed: PlayHistoryItem[] = await getRecentlyPlayed();
+    const counts: { [key: string]: SongCountItem } = {};
+  
+    allRecentlyPlayed.forEach(item => {
+      const { track } = item;
+      if (track.album.name.toLowerCase().includes('midnights')) {
+        if (counts[track.id]) {
+          counts[track.id].count++;
+        } else {
+          counts[track.id] = {
+            name: track.name,
+            artists: track.artists.map(a => a.name).join(', '),
+            albumUrl: track.album.images[0].url,
+            count: 1
+          };
+        }
+      }
+    });
+  
+    const sortedCounts = Object.values(counts).sort((a, b) => b.count - a.count);
+    return sortedCounts;
+  }, [getRecentlyPlayed]);
+
+    return { getTopSongs, getRecentlyPlayed, getRecentlyPlayedCounts, getMidnightsPlayCounts };
 };

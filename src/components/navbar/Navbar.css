@@ -1,8 +1,10 @@
 /* src/components/navbar/Navbar.css */
 nav {
-  background-color: #333;
-  color: #271b1b;
-  padding: 10px;
+  margin: 0;
+  background-color: #408C49;
+  color: #fFF;
+  padding: 30px;
+  font-size: 20px;
   display: flex; /* Convertir la barra de navegación en un flex container */
   justify-content: flex-start; /* Alinear los elementos a la izquierda */
 }
@@ -19,7 +21,7 @@ li {
 }
 
 a {
-  color: #fff;
+  color: #dfcdcd;
   text-decoration: none;
 }
 

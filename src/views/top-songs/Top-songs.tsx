@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/card/Card';
+import './TopSongs.css'
 import { useSpotifyApi } from '../../utils/spotifyApi/spotifyApi';
 
 const TopSongs: React.FC = () => {
@@ -10,7 +11,8 @@ const TopSongs: React.FC = () => {
     async function fetchTopSongs() {
       const response = await getTopSongs(); // Ejecuta la función para obtener las canciones
       if (response) {
-        setSongs(response.items); // Asume que la respuesta es un objeto con un array 'items'
+        setSongs(response.items);
+        console.log("la response", response.items) // Asume que la respuesta es un objeto con un array 'items'
       }
     }
     fetchTopSongs();
@@ -18,8 +20,12 @@ const TopSongs: React.FC = () => {
 
   return (
     <div>
-      <h2>Top 10 Songs</h2>
+
       <div className="card-container">
+        <div className='card-title'>
+        <h2>Top Weekly Songs</h2>
+        </div>
+ 
         {songs.map((song, index) => (
           <Card 
             key={index}
@@ -27,7 +33,7 @@ const TopSongs: React.FC = () => {
             name={song.name}
             artist={song.artists.map((artist: any) => artist.name).join(', ')}
             spotifyUrl={song.external_urls.spotify}
-            extraInfo={`Popularity: ${song.popularity}`}
+            album={song.album.name}
           />
         ))}
       </div>

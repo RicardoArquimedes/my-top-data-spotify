@@ -4,6 +4,7 @@ export interface Track {
     artists: Artist[];
     album: {
       images: Image[];
+      name: string;
     };
   }
   
@@ -35,3 +36,21 @@ export interface Track {
     count: number;
   }
   
+  export interface SongForAlbum {
+    album: {
+        name: string;
+        images: Array<{ url: string; height: number; width: number; }>;
+    };
+    artists: Array<{
+        name: string;
+    }>;
+    name: string;
+    external_urls: {
+        spotify: string;
+    };
+}
+
+
+export interface TopSongsResponse {
+  items: SongForAlbum[];
+}
