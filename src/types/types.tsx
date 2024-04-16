@@ -54,3 +54,18 @@ export interface Track {
 export interface TopSongsResponse {
   items: SongForAlbum[];
 }
+
+export interface ArtistCardProps {
+  image: string;
+  name: string;
+  popularity?: number;
+  spotifyUrl: string;
+}
+
+// Definir las interfaces para las propiedades de los componentes
+export interface TrackCardProps {
+  image: string;
+  title: string;
+  spotifyUrl: string;
+}
+

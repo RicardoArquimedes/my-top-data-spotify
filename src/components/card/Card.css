@@ -18,7 +18,11 @@
   max-width: 70%; /* Limita el ancho máximo de la tarjeta */
   border-radius: 8px; /* Bordes redondeados para la tarjeta */
 }
-
+.card-number {
+  width: 40px;
+  font-size: 24px;
+  margin: 0px 10px 0px 20px;
+}
 
 
 .card-image img {

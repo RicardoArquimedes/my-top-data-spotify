@@ -3,6 +3,7 @@ import React from 'react';
 import './Card.css'; // Asegúrate de importar el archivo CSS actualizado
 
 interface CardProps {
+  count?: number;
   image: string;
   name: string;
   artist: string;
@@ -10,9 +11,12 @@ interface CardProps {
   album?: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, name, artist, spotifyUrl, album }) => {
+const Card: React.FC<CardProps> = ({ image, name, artist, spotifyUrl, album, count }) => {
   return (
     <div className="card">
+            <div className="card-number">
+        <p>{count}</p>
+      </div>
       <div className="card-image">
         <img src={image} alt={name} />
       </div>

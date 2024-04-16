@@ -10,6 +10,7 @@ import PlayedCounts from './views/PlayedCounts/PlayedCounts';
 import LoginPage from './views/LoginPage/LoginPage';
 import CallbackPage from './components/CallbackPage/CallbackPage';
 import MidnightsTopSongs from './views/Eras/Midnigths/Midnigths';
+import TopArtists from './views/TopArtists/TopArtists';
 
 const App: React.FC = () => {
   const { token } = useAuth(); // Utiliza el hook de contexto para obtener el estado de autenticación
@@ -24,8 +25,10 @@ const App: React.FC = () => {
         <Route path="/home" element={token ? <Home /> : <Navigate to="/login" />} />
         <Route path="/today-played" element={ <TodayPlayed />  } />
         <Route path="/top-songs" element={<TopSongs />} />
-        <Route path="/played" element={ <PlayedCounts /> } />
+        <Route path="/top-artists" element={<TopArtists />} />
+        <Route path="/top-today-songs" element={ <PlayedCounts /> } />
         <Route path="/midnights" element={ <MidnightsTopSongs /> } />
+
       </Routes>
       <Footer />
     </BrowserRouter>

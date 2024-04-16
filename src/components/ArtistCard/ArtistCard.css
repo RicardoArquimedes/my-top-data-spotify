@@ -1,0 +1,60 @@
+.artist-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Esto crea dos columnas */
+  grid-gap: 20px; /* Espacio entre las tarjetas */
+  margin: 0 auto; /* Centra la cuadrícula en la página */
+  max-width: 1000px; /* Ancho máximo de la cuadrícula */
+}
+
+.artist-card {
+  background-color: #2d2d2d; /* Fondo de la tarjeta */
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  display: flex;
+  flex-direction: column; /* Organiza el contenido de la tarjeta en una columna */
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.artist-image {
+  border-radius: 50%; /* Hace la imagen circular */
+  width: 200px; /* Tamaño de la imagen */
+  height: 200px;
+  margin-top: 40px; /* Espacio sobre la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin perder la proporción */
+}
+
+.artist-info {
+  text-align: center; /* Alinea el texto al centro */
+  padding: 0px 0px 30px 0px; /* Espacio dentro de la información */
+}
+
+.main-text {
+  font-size: 30px;
+  margin: 20px;
+}
+
+.spotify-link {
+  background-color: #1DB954;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px; /* Espacio debajo del botón */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+}
+
+.spotify-link:hover {
+  color: #DDD; /* Color más oscuro cuando se hace hover */
+  text-decoration: none; /* Subrayado cuando se hace hover */
+}
+
+/* Media query para pantallas más pequeñas, aquí se puede ajustar para que sea una sola columna si es necesario */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
+  }
+}

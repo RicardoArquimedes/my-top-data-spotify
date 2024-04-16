@@ -89,7 +89,10 @@ button:focus-visible {
 }
 
 
-
+.logo-icon {
+  width: 24px;
+  height: 24px;
+}
 .rubik-bold {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;

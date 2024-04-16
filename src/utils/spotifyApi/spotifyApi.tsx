@@ -34,6 +34,11 @@ export const useSpotifyApi = () => {
         return fetchWebApi('v1/me/top/tracks?time_range=short_term&limit=50');
     }, [fetchWebApi]);
 
+    const getTopArtists = useCallback(async () => {
+        // Implementación de la llamada API, asumiendo que fetchWebApi ya está correctamente definido
+        return fetchWebApi('v1/me/top/artists?time_range=long_term&limit=10');
+    }, [fetchWebApi]);
+
   const getRecentlyPlayed = useCallback(async () => {
     const now = new Date();
     // const midnightToday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 4, 0, 0, 0);
@@ -64,20 +69,21 @@ export const useSpotifyApi = () => {
       return Object.values(songCounts);  // Devuelve un arreglo de objetos de conteo de canciones
   }, [getRecentlyPlayed]);
 
-  const getMidnightsPlayCounts = useCallback(async () => {
+  const getMidnightsConsolidatedCounts = useCallback(async () => {
     const allRecentlyPlayed: PlayHistoryItem[] = await getRecentlyPlayed();
     const counts: { [key: string]: SongCountItem } = {};
   
     allRecentlyPlayed.forEach(item => {
       const { track } = item;
       if (track.album.name.toLowerCase().includes('midnights')) {
-        if (counts[track.id]) {
-          counts[track.id].count++;
+        const nameKey = track.name.toLowerCase(); // Usamos el nombre en minúsculas como clave para consolidar
+        if (counts[nameKey]) {
+          counts[nameKey].count += 1;
         } else {
-          counts[track.id] = {
+          counts[nameKey] = {
             name: track.name,
             artists: track.artists.map(a => a.name).join(', '),
-            albumUrl: track.album.images[0].url,
+            albumUrl: track.album.images[0].url, // Escoge la portada del primer álbum encontrado
             count: 1
           };
         }
@@ -85,8 +91,8 @@ export const useSpotifyApi = () => {
     });
   
     const sortedCounts = Object.values(counts).sort((a, b) => b.count - a.count);
-    return sortedCounts;
+    return sortedCounts; // Retorna las canciones ordenadas por conteo de reproducciones consolidado por nombre
   }, [getRecentlyPlayed]);
-
-    return { getTopSongs, getRecentlyPlayed, getRecentlyPlayedCounts, getMidnightsPlayCounts };
+  
+    return { getTopSongs, getRecentlyPlayed, getRecentlyPlayedCounts, getMidnightsConsolidatedCounts, getTopArtists };
 };
