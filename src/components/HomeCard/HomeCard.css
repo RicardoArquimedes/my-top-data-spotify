@@ -1,0 +1,17 @@
+.home-container{
+    margin-top: 50px;
+}
+
+
+.home-image {
+
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+h2 {
+font-size: 32px;
+}

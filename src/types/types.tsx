@@ -69,3 +69,9 @@ export interface TrackCardProps {
   spotifyUrl: string;
 }
 
+
+export interface coverCardProps {
+  image: string;
+  name?: string;
+  title: string;
+}

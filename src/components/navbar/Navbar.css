@@ -1,6 +1,9 @@
 /* src/components/navbar/Navbar.css */
 nav {
   margin: 0;
+  top:0;
+  position: fixed;
+  width: 100%;
   background-color: #408C49;
   color: #fFF;
   padding: 30px;
