@@ -23,3 +23,14 @@ h2 {
     margin: 0 auto; /* Centra la cuadrícula en la página */
     max-width: 1000px; /* Ancho máximo de la cuadrícula */
   }
+
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
+    }
+  
+    .home-card-container {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 40px;
+    }
+  }

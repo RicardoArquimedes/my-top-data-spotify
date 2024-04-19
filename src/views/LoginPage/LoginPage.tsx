@@ -14,8 +14,7 @@ const LoginPage: React.FC = () => {
     generateCodeChallenge(codeVerifier).then((codeChallenge) => {
       const clientId = import.meta.env.VITE_CLIENT_ID;
       const redirectUri = 
-        "https://my-top-data-spotify.vercel.app/callback"
-    
+        "http://localhost:5173/callback"
       const scopes =
        "user-top-read user-read-recently-played user-read-private user-read-email playlist-read-private user-library-read"
       const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&code_challenge_method=S256&code_challenge=${codeChallenge}&scope=${scopes}`;

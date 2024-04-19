@@ -75,7 +75,7 @@ export const useSpotifyApi = () => {
   
     allRecentlyPlayed.forEach(item => {
       const { track } = item;
-      const taylorAlbums = ['midnights', 'losing'];
+      const taylorAlbums = ['tortured'];
       if (taylorAlbums.some(album => track.album.name.toLowerCase().includes(album))) {
         const nameKey = track.name.toLowerCase(); // Usamos el nombre en minúsculas como clave para consolidar
         if (counts[nameKey]) {

@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
         </Link>
         <button className="hamburger" onClick={toggleMenu}>
           <img src={hamburgerIcon} alt="Menu" />
+          
         </button>
         <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
           <li><Link to="/midnights">The Eras Play | TS</Link></li>
