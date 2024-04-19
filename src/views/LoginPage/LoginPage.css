@@ -1,0 +1,44 @@
+.login-btn {
+    background-color: #1DB954; /* Spotify green */
+    border: none;
+    border-radius: 500px; /* Pill shape */
+    color: white;
+    padding: 16px 48px; /* Adjust as needed */
+    font-size: 16px; /* Adjust as needed */
+    font-weight: bold; /* Bold font */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* No outline on focus */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25); /* Shadow for depth (optional) */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  .login-btn:hover {
+    background-color: #1ED760; /* Lighter green on hover */
+  }
+  .login-btn:disabled {
+    background-color: #A8A8A8; /* Grayed out when disabled */
+    cursor: default; /* Default cursor when disabled */
+  }
+  .login-btn img {
+    height: 24px; /* Adjust as needed */
+    vertical-align: middle; /* Align with the text */
+    margin-right: 8px; /* Space between the icon and text */
+  }
+
+  .login-container {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    padding: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .logo-app {
+    width: 200px;
+    height: 200px;
+  }

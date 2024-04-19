@@ -1,0 +1,85 @@
+/* src/components/navbar/Navbar.css */
+nav {
+  margin: 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #408C49;
+  padding: 20px 10px; /* Added padding on the right for space */
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between; /* Changed for space between logo and hamburger */
+  align-items: center; /* Align items vertically */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  display: none; /* Hidden by default */
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 25px; /* Adjust as necessary */
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show the hamburger icon on small screens */
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #408C49;
+    flex-direction: column;
+    display: none; /* Hide the menu initially */
+    padding: 20px;
+  }
+
+  .menu.open {
+    display: flex; /* Show the menu when open */
+  }
+
+  .menu li {
+    margin-bottom: 15px; /* Space out the links */
+  }
+
+  .menu li:last-child {
+    margin-bottom: 0; /* No margin for the last item */
+  }
+}

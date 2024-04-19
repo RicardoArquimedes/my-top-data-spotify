@@ -1,0 +1,33 @@
+/* src/components/navbar/Navbar.css */
+footer {
+  margin: 0;
+  background-color: #408C49;
+  color: #fFF;
+  padding: 20px;
+  font-size: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex; /* Convertir la barra de navegación en un flex container */
+  justify-content: flex-start; /* Alinear los elementos a la izquierda */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Convertir la lista en un flex container */
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
