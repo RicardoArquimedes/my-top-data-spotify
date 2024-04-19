@@ -23,7 +23,7 @@ export interface Track {
  export  interface SongCount {
     [key: string]: {
       name: string;
-      artists?: string;
+      artists: string;
       albumUrl: string;
       count: number;
     };
