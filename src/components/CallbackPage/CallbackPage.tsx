@@ -24,7 +24,6 @@ const CallbackPage: React.FC = () => {
 
             const fetchToken = async () => {
                 const clientId = import.meta.env.VITE_CLIENT_ID;
-                const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
                 const redirectUri = 'https://my-top-data-spotify.vercel.app/callback';
 
                 try {
@@ -35,7 +34,6 @@ const CallbackPage: React.FC = () => {
                         },
                         body: new URLSearchParams({
                             client_id: clientId,
-                            client_secret: clientSecret,
                             grant_type: 'authorization_code',
                             code: code,
                             redirect_uri: redirectUri,
