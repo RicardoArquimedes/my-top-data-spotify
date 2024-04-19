@@ -25,7 +25,7 @@ const CallbackPage: React.FC = () => {
             const fetchToken = async () => {
                 const clientId = import.meta.env.VITE_CLIENT_ID;
                 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-                const redirectUri = 'https://my-top-data-spotify.vercel.app/callback';
+                const redirectUri = 'https://ricardoarquimedes.github.io/my-top-data-spotify/callback';
 
                 try {
                     const response = await fetch('https://accounts.spotify.com/api/token', {
