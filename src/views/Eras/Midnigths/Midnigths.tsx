@@ -39,7 +39,7 @@ const MidnightsPlayedCounts: React.FC = () => {
   return (
     <div className="card-container">
       <div className='card-title'>
-        <h2>Top 5 de Midnights</h2>
+        <h3>Top 5 The Tortured Poets Department</h3>
       </div>
       {midnightsCounts ? (
         midnightsCounts.map((count, index) => (
