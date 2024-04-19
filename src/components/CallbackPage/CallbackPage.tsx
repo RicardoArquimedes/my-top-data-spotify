@@ -24,7 +24,7 @@ const CallbackPage: React.FC = () => {
 
             const fetchToken = async () => {
                 const clientId = '1bedb5e5c8004a5fa25dbbf15d42e7f5';
-                const redirectUri = 'http://localhost:5173/callback';
+                const redirectUri = 'https://my-top-data-spotify.vercel.app/callback';
 
                 try {
                     const response = await fetch('https://accounts.spotify.com/api/token', {
