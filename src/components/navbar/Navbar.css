@@ -5,7 +5,7 @@ nav {
   position: fixed;
   width: 100%;
   background-color: #408C49;
-  padding: 30px 20px; /* Added padding on the right for space */
+  padding: 20px 10px; /* Added padding on the right for space */
   font-size: 18px;
   display: flex;
   justify-content: space-between; /* Changed for space between logo and hamburger */
