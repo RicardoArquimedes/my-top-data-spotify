@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
     generateCodeChallenge(codeVerifier).then((codeChallenge) => {
       const clientId = import.meta.env.VITE_CLIENT_ID;
       const redirectUri = 
-        "https://my-top-data-spotify.vercel.app/"
+        "https://my-top-data-spotify.vercel.app/callback"
     
       const scopes =
        "user-top-read user-read-recently-played user-read-private user-read-email playlist-read-private user-library-read"
