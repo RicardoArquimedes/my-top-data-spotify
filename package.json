@@ -1,7 +1,7 @@
 {
   "name": "my-top-data-spoty",
   "private": true,
-  "homepage": "https://my-top-data-spotify.github.io/",
+  "homepage": "https://ricardoarquimedes.github.io/my-top-data-spotify/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

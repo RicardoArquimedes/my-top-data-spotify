@@ -23,8 +23,9 @@ const CallbackPage: React.FC = () => {
             setTokenRequested(true); // Marcamos que la solicitud se está iniciando
 
             const fetchToken = async () => {
-                const clientId = '1bedb5e5c8004a5fa25dbbf15d42e7f5';
-                const redirectUri = 'https://my-top-data-spotify.vercel.app/callback';
+                const clientId = import.meta.env.VITE_CLIENT_ID;
+                const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+                const redirectUri = 'https://ricardoarquimedes.github.io/my-top-data-spotify/callback';
 
                 try {
                     const response = await fetch('https://accounts.spotify.com/api/token', {
@@ -34,10 +35,12 @@ const CallbackPage: React.FC = () => {
                         },
                         body: new URLSearchParams({
                             client_id: clientId,
+                            client_secret: clientSecret,
                             grant_type: 'authorization_code',
                             code: code,
                             redirect_uri: redirectUri,
                             code_verifier: codeVerifier
+
                         })
                     });
                     const data = await response.json();
