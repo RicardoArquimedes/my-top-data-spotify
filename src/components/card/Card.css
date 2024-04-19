@@ -12,12 +12,18 @@
   background: #1E3424;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Esto separará los elementos internos */
-  margin: 20px auto; /* Margen superior e inferior y auto para centrar horizontalmente */
-  padding: 10px; /* Espaciado interno */
-  max-width: 70%; /* Limita el ancho máximo de la tarjeta */
-  border-radius: 8px; /* Bordes redondeados para la tarjeta */
+  justify-content: space-between;
+  /* Esto separará los elementos internos */
+  margin: 20px auto;
+  /* Margen superior e inferior y auto para centrar horizontalmente */
+  padding: 10px;
+  /* Espaciado interno */
+  max-width: 70%;
+  /* Limita el ancho máximo de la tarjeta */
+  border-radius: 8px;
+  /* Bordes redondeados para la tarjeta */
 }
+
 .card-number {
   width: 40px;
   font-size: 24px;
@@ -33,30 +39,36 @@
 
 .card-info {
   flex-grow: 1;
-  padding-left: 10px; /* Agregar algo de espacio entre la imagen y el texto */
+  padding-left: 10px;
+  /* Agregar algo de espacio entre la imagen y el texto */
 }
 
 .card-info h3,
 .card-info p {
-  margin: 0; /* Quitar los márgenes por defecto */
+  margin: 0;
+  /* Quitar los márgenes por defecto */
 }
 
 .card-action {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  flex-basis: 150px; /* Ancho fijo para el área del botón */
+  flex-basis: 150px;
+  /* Ancho fijo para el área del botón */
 }
 
 .card-action img {
-  height: 24px; /* Tamaño del ícono de Spotify */
-  margin-right: 10px; /* Espacio entre el ícono y el texto */
+  height: 24px;
+  /* Tamaño del ícono de Spotify */
+  margin-right: 10px;
+  /* Espacio entre el ícono y el texto */
 }
 
 .card-action button {
   background: none;
   border: none;
-  color: #f7f9f8; /* Color del ícono de Spotify */
+  color: #f7f9f8;
+  /* Color del ícono de Spotify */
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -67,4 +79,28 @@
 }
 
 
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    max-width: 50%;
+
+    text-align: center;
+  }
+
+  .card-action {
+    flex-basis: 50px;
+
+    display: none;
+  }
+
+   .card-info p {
+    display: none;
+
+
+}
+
+h2 {
+  text-align: center;
+}
+}
 /* Agregar más estilos aquí si es necesario */

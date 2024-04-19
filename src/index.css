@@ -113,9 +113,18 @@ body {
 }
 
 .card-container {
+  margin-top: 60px;
   margin-bottom: 100px;
 }
 
 a:hover {
   text-decoration: none;
 }
+
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+

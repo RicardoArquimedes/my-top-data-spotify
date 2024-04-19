@@ -3,7 +3,7 @@
 
 interface ImportMetaEnv {
     readonly VITE_CLIENT_ID: string;  // Asegúrate de que el nombre de la variable incluya el prefijo 'VITE_'
-    // Puedes definir otras variables aquí
+    readonly VITE_REDIRECT_URI: string;
 }
 
 interface ImportMeta {

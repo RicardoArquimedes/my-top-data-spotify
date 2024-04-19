@@ -1,10 +1,9 @@
-.home-container{
-    margin-top: 50px;
+.home-container {
+    margin-top: 70px;
 }
 
 
 .home-image {
-
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -12,6 +11,15 @@
     object-fit: cover;
     margin-bottom: 40px;
 }
+
 h2 {
-font-size: 32px;
+    font-size: 32px;
 }
+
+.home-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Esto crea dos columnas */
+    grid-gap: 20px; /* Espacio entre las tarjetas */
+    margin: 0 auto; /* Centra la cuadrícula en la página */
+    max-width: 1000px; /* Ancho máximo de la cuadrícula */
+  }

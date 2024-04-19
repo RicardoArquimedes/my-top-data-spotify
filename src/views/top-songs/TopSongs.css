@@ -1,10 +1,10 @@
 .card-title {
-    max-width: 70%;
+
     font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center; /* Esto separará los elementos internos */
-    margin: 20px auto; /* Margen superior e inferior y auto para centrar horizontalmente */
+    margin: 70px auto 0px auto; /* Margen superior e inferior y auto para centrar horizontalmente */
     padding: 20px; /* Espaciado interno */
     max-width: 70%; /* Limita el ancho máximo de la tarjeta */
 }

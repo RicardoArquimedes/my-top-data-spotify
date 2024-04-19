@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSpotifyApi } from '../../utils/spotifyApi/spotifyApi';
 import HomeCard from '../../components/HomeCard/HomeCard';
 import { Link } from 'react-router-dom';
-
+import theErasTour from '../../assets/img/The_Eras_Tour.jpg'
 
 const Home: React.FC = () => {
   const [artists, setArtists] = useState<any[]>([]);
@@ -31,7 +31,16 @@ const Home: React.FC = () => {
   
   return (
     <div className='home-container'>
-    <div className="artist-card-container">
+    <div className="home-card-container">
+    
+    <Link to="/midnights">
+
+        <HomeCard
+        title={"Top Eras | TS"}
+        image={theErasTour}
+        />
+
+</Link>
     <Link to="/top-artists">
       {artists.map((artist) => (
         <HomeCard

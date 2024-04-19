@@ -6,7 +6,7 @@ interface CardProps {
   count?: number;
   image: string;
   name: string;
-  artist: string;
+  artist?: string;
   spotifyUrl?: string;
   album?: string;
 }

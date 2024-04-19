@@ -23,7 +23,7 @@ export interface Track {
  export  interface SongCount {
     [key: string]: {
       name: string;
-      artists: string;
+      artists?: string;
       albumUrl: string;
       count: number;
     };
@@ -56,10 +56,12 @@ export interface TopSongsResponse {
 }
 
 export interface ArtistCardProps {
-  image: string;
-  name: string;
+  image?: string;
+  name?: string;
+  buttonText?: string;
   popularity?: number;
-  spotifyUrl: string;
+  spotifyUrl?: string;
+  onButtonClick?: any;
 }
 
 // Definir las interfaces para las propiedades de los componentes
