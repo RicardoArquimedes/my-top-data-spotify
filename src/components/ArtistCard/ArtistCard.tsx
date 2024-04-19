@@ -10,7 +10,7 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ image, name, spotifyUrl }) => {
       <div className="artist-info">
         <p className="main-text noto-sans.bold">{name}</p> 
         <a href={spotifyUrl} target="_blank" rel="noopener noreferrer" className="spotify-link">
-        <img className="logo-icon" src="public/assets/spotify/Spotify_Icon_White.png" alt="Spotify" />
+        <img className="logo-icon" src="/assets/spotify/Spotify_Icon_White.png" alt="Spotify" />
           Play on Spotify
         </a>
       </div>

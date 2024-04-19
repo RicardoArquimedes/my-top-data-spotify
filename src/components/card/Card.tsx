@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ image, name, artist, spotifyUrl, album, cou
         <p>{album}</p>
       </div>
       <div className="card-action">
-        <img src="public/assets/spotify/Spotify_Icon_White.png" alt="Spotify" />
+        <img src="/assets/spotify/Spotify_Icon_White.png" alt="Spotify" />
         <button className='noto-sans-semi-bold' onClick={() => window.open(spotifyUrl)}>Play on Spotify</button>
       </div>
     </div>
