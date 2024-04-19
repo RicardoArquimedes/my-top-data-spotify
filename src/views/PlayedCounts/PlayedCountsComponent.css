@@ -1,0 +1,39 @@
+/* PlayedCountsComponent.css */
+
+  
+  .number-display {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  
+  .card-image img {
+    border-radius: 8px;
+    width: 150px; /* Ajusta el tamaño de la miniatura aquí */
+    height: 150px;
+  }
+  
+  .card-info {
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+  
+  .card-info h3,
+  .card-info p {
+    margin: 0;
+  }
+  
+  .card-action button {
+    background: none;
+    border: none;
+    color: var(--spotify-green);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .card-action button:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  

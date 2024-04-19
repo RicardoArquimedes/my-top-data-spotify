@@ -4,6 +4,7 @@ export interface Track {
     artists: Artist[];
     album: {
       images: Image[];
+      name: string;
     };
   }
   
@@ -22,7 +23,7 @@ export interface Track {
  export  interface SongCount {
     [key: string]: {
       name: string;
-      artists: string;
+      artists?: string;
       albumUrl: string;
       count: number;
     };
@@ -35,3 +36,44 @@ export interface Track {
     count: number;
   }
   
+  export interface SongForAlbum {
+    album: {
+        name: string;
+        images: Array<{ url: string; height: number; width: number; }>;
+    };
+    artists: Array<{
+        name: string;
+    }>;
+    name: string;
+    external_urls: {
+        spotify: string;
+    };
+}
+
+
+export interface TopSongsResponse {
+  items: SongForAlbum[];
+}
+
+export interface ArtistCardProps {
+  image?: string;
+  name?: string;
+  buttonText?: string;
+  popularity?: number;
+  spotifyUrl?: string;
+  onButtonClick?: any;
+}
+
+// Definir las interfaces para las propiedades de los componentes
+export interface TrackCardProps {
+  image: string;
+  title: string;
+  spotifyUrl: string;
+}
+
+
+export interface coverCardProps {
+  image: string;
+  name?: string;
+  title: string;
+}

@@ -1,14 +1,15 @@
-// src/components/footer/Footer.tsx
+// src/components/navbar/Navbar.tsx
+import { Link } from "react-router-dom";
+import "./Footer.css"
 import React from 'react';
-import './Footer.css';
+
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className="footer-content">
-      <div>My Top Data Spotify</div>
-        <div>Contact</div>
-
-      </div>
+      <ul className="noto-sans-bold">
+      <li><Link to="/home">MTDS</Link></li>
+      <li><Link to="/top-artists">Contact</Link></li>
+      </ul>
     </footer>
   );
 };
