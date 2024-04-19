@@ -7,17 +7,18 @@ import spotifyLogoWhite from "../../assets/spotify/Spotify_Icon_White.png";
 
 const LoginPage: React.FC = () => {
   const [url, setUrl] = useState("");
-
+  const redirectUrl = import.meta.env.VITE_CLIENT_REDIRECT_URI;
+  const encodedScopes = import.meta.env.VITE_CLIENT_USER_SCOPES
   useEffect(() => {
     const codeVerifier = generateCodeVerifier();
     localStorage.setItem("pkce_code_verifier", codeVerifier);
     generateCodeChallenge(codeVerifier).then((codeChallenge) => {
       const clientId = import.meta.env.VITE_CLIENT_ID;
       const redirectUri = encodeURIComponent(
-        import.meta.env.VITE_CLIENT_REDIRECT_URI
+        "https://my-top-data-spotify.vercel.app/"
       );
       const scopes = encodeURIComponent(
-        import.meta.env.VITE_CLIENT_USER_SCOPES
+       "user-top-read user-read-recently-played user-read-private user-read-email playlist-read-private user-library-read"
       );
       const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&code_challenge_method=S256&code_challenge=${codeChallenge}&scope=${scopes}`;
       console.log("Authorization URL:", authUrl);
