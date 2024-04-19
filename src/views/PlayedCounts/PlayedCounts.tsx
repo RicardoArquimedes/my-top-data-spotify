@@ -50,7 +50,7 @@ const PlayedCountsComponent = () => {
             </div>
             <div className="card-action">
               <img
-                src="src/assets/spotify/Spotify_Icon_White.png"
+                src="public/assets/spotify/Spotify_Icon_White.png"
                 alt="Spotify"
               />
               <button
