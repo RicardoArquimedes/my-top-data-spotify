@@ -7,8 +7,7 @@ import spotifyLogoWhite from "../../assets/spotify/Spotify_Icon_White.png";
 
 const LoginPage: React.FC = () => {
   const [url, setUrl] = useState("");
-  const redirectUrl = import.meta.env.VITE_CLIENT_REDIRECT_URI;
-  const encodedScopes = import.meta.env.VITE_CLIENT_USER_SCOPES
+
   useEffect(() => {
     const codeVerifier = generateCodeVerifier();
     localStorage.setItem("pkce_code_verifier", codeVerifier);
