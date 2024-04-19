@@ -1,7 +1,6 @@
 {
   "name": "my-top-data-spoty",
   "private": true,
-  "homepage": "https://ricardoarquimedes.github.io/my-top-data-spotify/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
